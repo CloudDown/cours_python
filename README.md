@@ -7,7 +7,7 @@ valeurs que l'on peut réutiliser ou manipuler.
 ## 1. Déclaration de variables
 
 On peut nommer les variables comme on le souhaite tant qu'on respecte certaines règles (pas d'espaces, pas de mots-clés réservés, etc.). Par exemple :
-ma_variable = 12
+ma_variable = 12 ou   
 azazdzee= "zerfez fzee"
 
 
