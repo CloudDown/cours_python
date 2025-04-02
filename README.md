@@ -305,4 +305,80 @@ afficher_message()  # Message affiché!
 
 ```
 
+# 🗂️ Les Dictionnaires en Python
+
+Un dictionnaire est une structure de données super pratique en Python ! Contrairement aux listes qui utilisent des indices numériques, les dictionnaires stockent des données sous forme de paires **clé-valeur**. C’est comme un vrai dictionnaire : tu cherches un mot (la clé) et tu trouves sa définition (la valeur).
+
+### Création d’un dictionnaire
+
+On utilise des accolades `{}` pour créer un dictionnaire, avec des paires `clé: valeur` séparées par des virgules.
+
+```python
+mon_dico = {"nom": "Alice", "age": 25, "ville": "Paris"}
+```
+Ici :
+    "nom", "age", "ville" sont les clés.
+    "Alice", 25, "Paris" sont les valeurs
+
+### Accéder aux éléments
+Pour récupérer une valeur, on utilise la clé entre crochets [] :
+
+```python
+print(mon_dico["nom"])  # Affiche : Alice
+print(mon_dico["age"])  # Affiche : 25
+```
+
+### Ajouter ou modifier des éléments
+Les dictionnaires sont modifiables ! Pour ajouter ou mettre à jour une paire clé-valeur, il suffit d’assigner une valeur à une clé :
+
+```python
+mon_dico["pays"] = "France"  # Ajoute une nouvelle paire (si la clé "pays" n'existe pas alors il va automatiquement en creer une dcp)
+mon_dico["age"] = 26         # Met à jour la valeur de "age"
+print(mon_dico)  # Affiche : {"nom": "Alice", "age": 26, "ville": "Paris", "pays": "France"}
+```
+
+### Supprimer des éléments
+Pour supprimer une paire clé-valeur, on peut utiliser .pop() ou del :
+
+```python
+mon_dico.pop("ville")  # Supprime la clé "ville" et sa valeur
+print(mon_dico)  # Affiche : {"nom": "Alice", "age": 26, "pays": "France"}
+
+del mon_dico["pays"]  # Une autre façon de supprimer
+print(mon_dico)  # Affiche : {"nom": "Alice", "age": 26}
+```
+### Parcourir un dictionnaire
+On peut utiliser une boucle for pour explorer un dictionnaire. :
+
+```python
+for cle in mon_dico:
+    print(cle)  # Affiche : nom, age
+```
+### Longueur d’un dictionnaire
+Comme pour les listes, on utilise len() pour connaître le nombre de paires clé-valeur :
+
+```python
+print(len(mon_dico))  # Affiche : 2 (car il reste "nom" et "age")
+```
+
+## Exemple pratique : Gestion d’un inventaire
+Imaginons qu’on gère un petit magasin :
+```python
+inventaire = {"pommes": 10, "bananes": 5, "oranges": 8}
+
+# Ajouter un produit
+inventaire["poires"] = 3
+
+# Mettre à jour le stock
+inventaire["pommes"] -= 2  # Vendre 2 pommes
+
+# Afficher l’inventaire
+for produit, quantite in inventaire.items():
+    print(f"{produit} : {quantite} en stock")
+# Affiche :
+# pommes : 8 en stock
+# bananes : 5 en stock
+# oranges : 8 en stock
+# poires : 3 en stock
+```
 # FINIIIIIISS 🥳🥳
